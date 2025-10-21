@@ -3,7 +3,7 @@
 
     // Construir o objeto do Tipo
     $tipo = new Tipo();
-    $tipo->setId_Tipo($_POST['id_tipo']);
+    $tipo->setIdTipo($_POST['id']);
     $tipo->setDescricao($_POST['descricao']);
 
     // Atualizar registro no Banco de Dados

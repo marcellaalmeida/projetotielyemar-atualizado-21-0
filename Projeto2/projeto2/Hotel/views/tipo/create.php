@@ -259,7 +259,7 @@
                     <form action="insert.php" method="post">
                         <p class="form-group">
                             <label for="descricao">Descrição:</label>
-                            <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Digite a descrição do tipo" required>
+                            <input type="text" name="descricao" id="descricao" class="form-control" required>
                         </p>
 
                         <p class="form-group">

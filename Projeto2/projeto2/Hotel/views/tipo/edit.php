@@ -3,7 +3,7 @@
     require "../../autoload.php";
 
     $dao = new TipoDAO();
-    $hospede = $dao->find($_GET['id']);
+    $tipo = $dao->find($_GET['id']);
 ?>
 
 <!DOCTYPE html>
@@ -267,16 +267,15 @@
                     <form action="update.php" method="post">
                         <p class="form-group">
                             <label for="descricao">Descrição:</label>
-                            <input type="text" name="descricao" id="descricao" class="form-control" value="<?= $tipo->getDescricao() ?>" placeholder="Digite o tipo"required>
+                            <input type="text" name="descricao" id="descricao" class="form-control" value="<?= $tipo->getDescricao() ?>" required>
                         </p>
 
-                        <input type="hidden" name="id" value="<?= $tipo->getId_Tipo() ?>">
+                        <input type="hidden" name="id" value="<?= $tipo->getIdTipo() ?>">
 
                         <p class="form-group">
                             <input type="reset" value="Limpar" class="btn btn-default">
                             <input type="submit" value="Salvar" class="btn btn-primary">
                         </p>
-
                     </form>
                 </div>
             </main>

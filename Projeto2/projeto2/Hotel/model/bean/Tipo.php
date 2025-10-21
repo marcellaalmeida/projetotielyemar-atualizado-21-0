@@ -1,17 +1,17 @@
 <?php
 class Tipo {
     // Atributos
-    private $id_tipo;
+    private $idtipo;
     private $descricao;
 
     // Métodos Getter e Setter
 
-    public function getId_Tipo() {
-        return $this->id_tipo;
+    public function getIdTipo() {
+        return $this->idtipo;
     }
 
-    public function setId_Tipo($id_tipo) {
-        $this->id_tipo = $id_tipo;
+    public function setIdTipo($idtipo) {
+        $this->idtipo = $idtipo;
     }
 
     public function getDescricao() {

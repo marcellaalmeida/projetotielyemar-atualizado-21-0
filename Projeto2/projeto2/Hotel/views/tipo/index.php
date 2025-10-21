@@ -264,8 +264,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="my-4">
                     <h2>Tipos</h2>
-                    <a href="create.php" class="btn btn-success mb-3">Novo Tipo</a>
-
+                    <a href="create.php">Novo Tipo</a>
                     <table class="table table-hover">
                             <tr>
                                 <th>ID</th>
@@ -274,21 +273,19 @@
                             </tr>
                             <?php foreach ($dao->read() as $tipo) : ?>
                                 <tr>
-                                    <td><?= $tipo->getId_Tipo() ?></td>
+                                    <td><?= $tipo->getIdTipo() ?></td>
                                     <td><?= $tipo->getDescricao() ?></td>
                                     <td>
-                                        <a href="edit.php?id=<?= $tipo->getId_Tipo() ?>" title="Editar">
+                                        <a href="edit.php?id=<?= $tipo->getIdTipo() ?>" title="Editar">
                                             <i class="bi bi-pencil"></i>
                                         </a>
-                                        <a class="link link-danger" href="destroy.php?id=<? $tipo->getId_Tipo() ?>" title="Excluir">
+                                        <a class="link link-danger" href="destroy.php?id=<? $tipo->getIdTipo() ?>" title="Excluir">
                                             <i class="bi bi-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
-                        </tbody>
                     </table>
-
                 </div>
             </main>
         </div>

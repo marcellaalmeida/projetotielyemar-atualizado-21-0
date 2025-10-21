@@ -30,7 +30,7 @@ class TipoDAO {
 
             foreach ($resultados as $linha) {
                 $tipo = new Tipo();
-                $tipo->setId_Tipo($linha['id_tipo']);
+                $tipo->setIdTipo($linha['idtipo']);
                 $tipo->setDescricao($linha['descricao']);
 
                 array_push($tipos, $tipo);
@@ -45,7 +45,7 @@ class TipoDAO {
 
     public function find($id) {
         try {
-            $query = BD::getConexao()->prepare("SELECT * FROM tipo WHERE id_tipo = :id");
+            $query = BD::getConexao()->prepare("SELECT * FROM tipo WHERE idtipo = :id");
             $query->bindValue(':id', $id, PDO::PARAM_INT);
 
             if (!$query->execute())
@@ -55,7 +55,7 @@ class TipoDAO {
 
             if ($linha) {
                 $tipo = new Tipo();
-                $tipo->setId_Tipo($linha['id_tipo']);
+                $tipo->setIdTipo($linha['idtipo']);
                 $tipo->setDescricao($linha['descricao']);
                 return $tipo;
             }
@@ -72,10 +72,10 @@ class TipoDAO {
             $query = BD::getConexao()->prepare(
                 "UPDATE tipo
                  SET descricao = :descricao
-                 WHERE id_tipo = :id"
+                 WHERE idtipo = :id"
             );
             $query->bindValue(':descricao', $tipo->getDescricao(), PDO::PARAM_STR);
-            $query->bindValue(':id', $tipo->getId_Tipo(), PDO::PARAM_INT);
+            $query->bindValue(':id', $tipo->getIdTipo(), PDO::PARAM_INT);
 
             return $query->execute();
         } catch (PDOException $e) {
@@ -86,7 +86,7 @@ class TipoDAO {
 
     public function destroy($id) {
         try {
-            $query = BD::getConexao()->prepare("DELETE FROM tipo WHERE id_tipo = :id");
+            $query = BD::getConexao()->prepare("DELETE FROM tipo WHERE idtipo = :id");
             $query->bindValue(':id', $id, PDO::PARAM_INT);
 
             return $query->execute();
@@ -108,7 +108,7 @@ class TipoDAO {
 
             if ($linha) {
                 $tipo = new Tipo();
-                $tipo->setId_Tipo($linha['id_tipo']);
+                $tipo->setIdTipo($linha['idtipo']);
                 $tipo->setDescricao($linha['descricao']);
                 return $tipo;
             }

@@ -72,7 +72,7 @@ class StatusDAO {
             $query = BD::getConexao()->prepare(
                 "UPDATE status
                  SET descricao = :descricao
-                 WHERE idstatus = :id"
+                 WHERE idstatus = :idstatus"
             );
             $query->bindValue(':descricao', $status->getDescricao(), PDO::PARAM_STR);
             $query->bindValue(':idstatus', $status->getIdStatus(), PDO::PARAM_INT);
